@@ -1,0 +1,3 @@
+<template>
+  <DashboardLayoutFullLogoDark />
+</template>
