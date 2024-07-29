@@ -33,9 +33,16 @@
             ></v-rating>
           </div>
         </v-card-text>
-        <v-card-actions class="">
-            <v-btn class="text-primary"><v-icon class="mx-1">mdi-cart-plus</v-icon>Add To Card</v-btn>
-          </v-card-actions>
+        <v-card-actions class="d-flex align-center">
+              <v-btn text color="primary">View Details</v-btn>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>mdi-heart-outline</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>mdi-cart</v-icon>
+              </v-btn>
+            </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -54,5 +61,6 @@ const rating = ref(3.5)
     text-transform: capitalize;
     text-decoration: none
   }
+
 }
 </style>

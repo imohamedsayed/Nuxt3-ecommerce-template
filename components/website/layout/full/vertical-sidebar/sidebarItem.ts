@@ -3,7 +3,8 @@ import {
   LayoutDashboardIcon,
   LoginIcon,
   HeartIcon,
-  ShoppingBagIcon
+  ShoppingBagIcon,
+  CategoryIcon
 } from "vue-tabler-icons";
 
 export interface menu {
@@ -29,6 +30,11 @@ const sidebarItem: menu[] = [
     to: "/",
   },
   { header: "Shopping" },
+  {
+    title: "Categories",
+    icon: CategoryIcon,
+    to: "/categories",
+  },
   {
     title: "Cart",
     icon: ShoppingBagIcon,
