@@ -9,7 +9,9 @@ const sDrawer = ref(true);
 <template>
     <div >
             <!------Sidebar-------->
-            <v-navigation-drawer left elevation="0"  app class="leftSidebar"   v-model="sDrawer">
+            <client-only>
+            <v-navigation-drawer left elevation="0"  app class="leftSidebar"   v-model="sDrawer"
+            >
                 <!---Logo part -->
                 <div class="pa-5 text-center">
                     <img src="~/assets/images/logo.png" width="60px" class="mx-4 mx-auto">
@@ -37,6 +39,7 @@ const sDrawer = ref(true);
             </div>
 
             </v-navigation-drawer>
+            </client-only>
             <!------Header-------->
             <v-app-bar elevation="0" height="70">
                 <div class="d-flex align-center justify-space-between w-100">

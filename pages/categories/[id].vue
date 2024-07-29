@@ -39,7 +39,7 @@
 
 
       <div class="products-list mt-10">
-         <v-row class="align-center">
+        <v-row class="align-center">
             <v-col cols="12" md="2">
                 <v-select
                     label="Sort"
