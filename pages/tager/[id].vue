@@ -1,21 +1,32 @@
 <template>
-  <div class="products">
-      <div class="search-input fill-hight d-flex flex-column justify-center">
-        <p class="text-center text-textPrimary">Search for a product </p>
-        <v-container class="">
-            <div class="d-flex align-center gap-2">
-                <v-text-field variant="outlined" color="primary" prepend-inner-icon="mdi-magnify" label="search"></v-text-field>
-                <v-btn class="mb-6" icon="mdi-magnify" elevation="0" color="primary"></v-btn>
-            </div>            
-        </v-container>
-        <div class="custom-shape-divider-bottom-1722214516">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
-        </svg>
-      </div>
-      </div>
+  <div class="profile">
+    <div class="profile-img">
+      <v-sheet class="profile-img-section pa-8">
+        <div class="background">
+          <v-img src="~/assets/images/users/avatar-2.jpg" cover class="img" alt=""></v-img>
+        </div>
+        <div
+          class="d-flex position-relative index-3 align-center align-md-end gap-2 flex-column flex-md-row"
+        >
+          <v-card width="240" height="240" class="mt-5">
+            <v-img src="~/assets/images/users/avatar-2.jpg" cover></v-img>
+          </v-card>
+          <div class="name mt-md-16 mt-0">
+            <v-card-title class="text-white">Mohamed Sayed</v-card-title>
+            <v-card-text>Vendor</v-card-text>
+             <v-rating
+              :model-value="4"
+              color="orange-lighten-2"
+              density="compact"
+              size="large"
+              readonly
+            ></v-rating>
+          </div>
+        </div>
+      </v-sheet>
+    </div>
 
-      <div class="products">
+       <div class="products mt-16">
         <v-container fluid>
           <v-row class="align-center">
             <v-col cols="6" md="2">
@@ -168,37 +179,27 @@ const fetchData = async () => {
 </script>
 
 <style lang="scss" scoped>
-.products {
-  .search-input {
+.profile {
+  .profile-img {
     position: relative;
-    height: 60vh;
 
-    @media(max-width:600px) {
-      height: 50vh;
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      filter: blur(6px);
+
     }
 
-    background: linear-gradient(to bottom right, #ECEFF1, #fff);
-
+    .name {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.321);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0 20px;
+    }
   }
-}
-
-.custom-shape-divider-bottom-1722214516 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-bottom-1722214516 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 166px;
-}
-
-.custom-shape-divider-bottom-1722214516 .shape-fill {
-  fill: #FFFFFF;
 }
 </style>

@@ -17,7 +17,7 @@
         </template>
       </v-breadcrumbs>
 
-      <h2 class="mt-10">Shop by category</h2>
+      <h2 class="mt-10 text-textPrimary">Shop by category</h2>
       <v-row class="mt-4">
         <v-col cols="12" md="6" lg="4" v-for="i in 9" :key="i" class="d-flex">
           <v-card class="product-card" elevation="0" >

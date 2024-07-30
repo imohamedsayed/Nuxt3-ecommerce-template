@@ -48,7 +48,7 @@ const sDrawer = ref(true);
                             size="small">
                             <Menu2Icon size="20" stroke-width="1.5" />
                         </v-btn>
-                        <v-text-field width="400px" class="mt-6 d-none d-md-block mx-2" color="primary" rounded="lg" variant="outlined" prepend-inner-icon="mdi-magnify" label="search"></v-text-field>
+                        <v-text-field width="400px" type="search" clearable class="mt-6 d-none d-md-block mx-2" color="primary" rounded="lg" variant="outlined" prepend-inner-icon="mdi-magnify" label="search"></v-text-field>
                     </div>
                 
                     <div>
