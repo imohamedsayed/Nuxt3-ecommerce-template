@@ -150,7 +150,7 @@ const sort2 = ref('asc');
 const page = ref(1);
 const products = ref(props.products);
 const loading = ref(true);
-
+const selectedCategories = ref([])
 const fetchData = async () => {
   loading.value = true;
   try {
@@ -172,13 +172,11 @@ const fetchData = async () => {
   .search-input {
     position: relative;
     height: 60vh;
+    background: linear-gradient(to bottom right, #ECEFF1, #fff);
 
     @media(max-width:600px) {
       height: 50vh;
     }
-
-    background: linear-gradient(to bottom right, #ECEFF1, #fff);
-
   }
 }
 

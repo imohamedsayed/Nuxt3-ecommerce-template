@@ -22,7 +22,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  plugins: [],
   app: {
     head: {
       title: "Project Startup",

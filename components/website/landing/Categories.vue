@@ -117,7 +117,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+
+</script>
 
 <style lang="scss" scoped>
 .categories {
@@ -127,6 +130,7 @@
     border: 1px solid rgba(0, 0, 0, 0.077);
     box-shadow: 1px 1px 12px 1px rgba(0, 0, 0, 0.05);
     margin-bottom: 10px;
+
     a {
       text-decoration: none;
     }

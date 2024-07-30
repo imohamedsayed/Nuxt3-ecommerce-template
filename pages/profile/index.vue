@@ -3,13 +3,31 @@
     <div class="profile-img">
       <v-sheet class="profile-img-section pa-8">
         <div class="background">
-          <v-img src="~/assets/images/users/avatar-1.jpg" cover class="img" alt=""></v-img>
+          <v-img src="~/assets/images/users/avatar-1.jpg" cover class="img" alt="">
+            <template v-slot:placeholder>
+                  <div class="d-flex align-center justify-center fill-height">
+                    <v-progress-circular
+                      color="grey-lighten-4"
+                      indeterminate
+                    ></v-progress-circular>
+                  </div>
+                </template>
+          </v-img>
         </div>
         <div
           class="d-flex position-relative index-3 align-center gap-2 flex-column flex-md-row"
         >
           <v-card width="240" height="240" class="mt-5">
-            <v-img src="~/assets/images/users/avatar-1.jpg" cover></v-img>
+            <v-img src="~/assets/images/users/avatar-1.jpg" cover>
+              <template v-slot:placeholder>
+                  <div class="d-flex align-center justify-center fill-height">
+                    <v-progress-circular
+                      color="grey-lighten-4"
+                      indeterminate
+                    ></v-progress-circular>
+                  </div>
+                </template>
+            </v-img>
           </v-card>
           <div class="name">
             <v-card-title class="text-black">Mohamed Sayed</v-card-title>
@@ -161,6 +179,9 @@
 
 <script setup>
 const tab = ref("tab-1");
+onMounted(() => {
+  console.log('mounted')
+})
 </script>
 
 <style lang="scss" scoped>
