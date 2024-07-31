@@ -44,7 +44,7 @@
       </v-sheet>
     </div>
 
-       <div class="products mt-16">
+       <SharedUiParentCard class="products mt-16">
         <v-container fluid>
           <v-row class="align-center">
             <v-col cols="6" md="2">
@@ -118,7 +118,7 @@
           </v-row>
         </v-container>
 
-      </div>
+      </SharedUiParentCard>
       <v-dialog v-model="showFilters" persistent max-width="400px">
       <v-card>
         <v-card-title>Filters</v-card-title>

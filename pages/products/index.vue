@@ -15,7 +15,7 @@
       </div>
       </div>
 
-      <div class="products">
+      <SharedUiParentCard class="products">
         <v-container fluid>
           <v-row class="align-center">
             <v-col cols="6" md="2">
@@ -89,7 +89,7 @@
           </v-row>
         </v-container>
 
-      </div>
+      </SharedUiParentCard>
       <v-dialog v-model="showFilters" persistent max-width="400px">
       <v-card>
         <v-card-title>Filters</v-card-title>

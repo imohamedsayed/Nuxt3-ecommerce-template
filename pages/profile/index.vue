@@ -37,7 +37,7 @@
       </v-sheet>
     </div>
 
-    <div class="mt-10">
+    <SharedUiParentCard class="mt-10">
       <v-container>
         <div class="">
           <v-tabs
@@ -173,7 +173,7 @@
           </v-tabs-window>
         </div>
       </v-container>
-    </div>
+    </SharedUiParentCard>
   </div>
 </template>
 

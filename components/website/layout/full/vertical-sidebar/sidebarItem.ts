@@ -4,7 +4,9 @@ import {
   ShoppingBagIcon,
   CategoryIcon,
   BuildingStoreIcon,
-  UserIcon, MessageIcon
+  UserIcon,
+  MessageIcon,
+  GiftIcon,
 } from "vue-tabler-icons";
 
 export interface menu {
@@ -35,6 +37,11 @@ const sidebarItem: menu[] = [
     to: "/customer-support",
   },
   { header: "Shopping" },
+  {
+    title: "Offers",
+    icon: GiftIcon,
+    to: "/offers",
+  },
   {
     title: "Categories",
     icon: CategoryIcon,

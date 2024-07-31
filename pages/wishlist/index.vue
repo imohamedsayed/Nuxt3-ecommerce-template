@@ -21,7 +21,7 @@
       </template>
     </v-breadcrumbs>
     <v-container>
-      <v-card flat>
+      <SharedUiParentCard>
         <v-card-title class="d-flex align-center pe-2">
           <v-spacer></v-spacer>
 
@@ -91,7 +91,7 @@
             </div>
           </template>
         </v-data-table>
-      </v-card>
+      </SharedUiParentCard>
     </v-container>
   </div>
 </template>

@@ -1,7 +1,8 @@
 <template>
   <div class="chat-page">
+   
     <v-container>
-      <div class="chat">
+      <div class="chat" v-if="1 === 1">
         <div class="chat-content">
           <div class="replay" dir="ltr">
             <v-list-item
@@ -77,17 +78,30 @@
           </div>
         </div>
       </div>
+      <div v-else>
+        <v-empty-state
+            headline="Whoops"
+            title="You have to login first to start chatting with us!"
+            text="We are waiting you <3"
+            image="./images/background/chat.svg"
+          >
+          <v-btn color="primary">login</v-btn>
+        </v-empty-state>
+      </div>
+
     </v-container>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>
 
 <style lang="scss" scoped>
 .chat-page {
   .chat {
     .chat-content {
-      height: 65vh;
+      height: 70vh;
       overflow-y: auto;
 
       &::-webkit-scrollbar {
