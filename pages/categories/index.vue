@@ -20,21 +20,24 @@
       <h2 class="mt-10 text-textPrimary">Shop by category</h2>
       <v-row class="mt-4">
         <v-col cols="12" md="6" lg="4" v-for="i in 9" :key="i" class="d-flex">
-          <v-card class="product-card" elevation="0" >
-            <v-img src="~/assets/images/background/gaming.jpg" class="white--text" height="400x">
+          <v-hover v-slot:default="{ isHovering }">
+            <v-card class="product-card" :elevation="isHovering ? 6 : 0">
+              <v-img src="~/assets/images/background/gaming.jpg" class="white--text rounded-lg" >
                 <template v-slot:placeholder>
                   <div class="d-flex align-center justify-center fill-height">
-                    <v-progress-circular
-                      color="primary"
-                      indeterminate
-                    ></v-progress-circular>
+                    <v-progress-circular color="primary" indeterminate></v-progress-circular>
                   </div>
-          </template>
-            </v-img>
-            <v-card-title class="title text-center">Category Name</v-card-title>
-            
-           
-          </v-card>
+                </template>
+                <v-overlay :value="isHovering" class="overlay">
+                  <v-row class="fill-height ma-0" align="center" justify="center">
+                    <v-btn class="mx-2" color="primary" outlined>Add to Cart</v-btn>
+                    <v-btn class="mx-2" color="primary" outlined>View Details</v-btn>
+                  </v-row>
+                </v-overlay>
+              </v-img>
+              <v-card-title class="title text-center">Category Name</v-card-title>
+            </v-card>
+          </v-hover>
         </v-col>
       </v-row>
     </v-container>
@@ -58,7 +61,21 @@ const items = [
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .v-img {
+      position: relative;
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &.v-overlay--active {
+          opacity: 1;
+        }
+      }
     }
 
     .title {
