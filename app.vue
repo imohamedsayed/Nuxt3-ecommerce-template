@@ -7,7 +7,6 @@
   </div>
 </template>
 <script setup>
-import { useError } from 'nuxt/app'
 
 onErrorCaptured((error) => {
   throw createError({
@@ -16,7 +15,7 @@ onErrorCaptured((error) => {
   })
 })
 </script>
-<style lang="scss">
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900;1000&display=swap');
 
 html:lang(AR)* {
@@ -46,4 +45,6 @@ body::-webkit-scrollbar-thumb {
 :root {
   --skin-color: #2a388a;
 }
+
+
 </style>

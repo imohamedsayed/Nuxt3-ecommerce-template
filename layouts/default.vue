@@ -5,11 +5,18 @@ import { RouterView } from 'vue-router';
 
 <template>
     <v-locale-provider >
-        <v-app>   
+        <v-app>
             <WebsiteLayoutFullMain/>
             <v-main>
                 <v-container  fluid>
-                    <RouterView />
+                    <router-view v-slot="{Component,route}">
+                        <transition
+                        :enter-active-class="route.meta.enterClass"
+                        :leave-active-class="route.meta.leaveClass"
+                        mode="out-in">
+                            <component :is="Component"/>
+                        </transition>
+                    </router-view>
                     <WebsiteLayoutFullFooter/>
                 </v-container>
             </v-main>

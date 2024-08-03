@@ -1,5 +1,5 @@
 <template>
-  <div >    
+  <div >
     <WebsiteLandingIntro/>
     <v-container>
       <WebsiteLandingCategories/>
@@ -13,7 +13,10 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInRight',
+    leaveClass: 'animate__animated animate__fadeOutLeft'
+})
 
 
 </script>

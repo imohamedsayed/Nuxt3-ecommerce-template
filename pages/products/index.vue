@@ -6,7 +6,7 @@
             <div class="d-flex align-center gap-2">
                 <v-text-field variant="outlined" color="primary" prepend-inner-icon="mdi-magnify" label="search"></v-text-field>
                 <v-btn class="mb-6" icon="mdi-magnify" elevation="0" color="primary"></v-btn>
-            </div>            
+            </div>
         </v-container>
         <div class="custom-shape-divider-bottom-1722214516">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -44,7 +44,7 @@
           </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" md="3" class="d-none d-md-block">       
+            <v-col cols="12" md="3" class="d-none d-md-block">
               <v-checkbox label="Clothes" color="primary"></v-checkbox>
               <v-checkbox label="Electronics" color="primary"></v-checkbox>
               <v-checkbox label="Accessories" color="primary"></v-checkbox>
@@ -52,7 +52,7 @@
               <v-checkbox label="Food" color="primary"></v-checkbox>
               <v-checkbox label="Animals" color="primary"></v-checkbox>
               <hr>
-              <v-range-slider class="mt-4" color="primary" label="price range" min="200" max="600"></v-range-slider>        
+              <v-range-slider class="mt-4" color="primary" label="price range" min="200" max="600"></v-range-slider>
               <hr>
               <p class="text-muted">color</p>
               <v-chip-group color="primary">
@@ -101,7 +101,7 @@
               <v-checkbox label="Food" color="primary"></v-checkbox>
               <v-checkbox label="Animals" color="primary"></v-checkbox>
               <hr>
-              <v-range-slider class="mt-4" color="primary" label="price range" min="200" max="600"></v-range-slider>        
+              <v-range-slider class="mt-4" color="primary" label="price range" min="200" max="600"></v-range-slider>
               <hr>
               <p class="text-muted">color</p>
               <v-chip-group color="primary">
@@ -123,7 +123,10 @@
 
 <script setup>
 import { Menu2Icon } from 'vue-tabler-icons';
-
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInRight',
+    leaveClass: 'animate__animated animate__fadeOutLeft'
+})
 const showFilters = ref(false);
 
 const props = defineProps({

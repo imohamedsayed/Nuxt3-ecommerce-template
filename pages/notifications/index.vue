@@ -39,12 +39,18 @@
           </v-col>
         </v-row>
       </v-container>
-      
+
     </div>
   </div>
 </template>
 
 <script setup>
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInLeft',
+    leaveClass: 'animate__animated animate__fadeOutRight'
+})
+
+
 const items = [
   {
     title: "Notifications",

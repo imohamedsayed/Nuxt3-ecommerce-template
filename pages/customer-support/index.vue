@@ -1,6 +1,6 @@
 <template>
   <div class="chat-page">
-   
+
     <v-container>
       <div class="chat" v-if="1 === 1">
         <div class="chat-content">
@@ -94,7 +94,10 @@
 </template>
 
 <script setup>
-
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInLeft',
+    leaveClass: 'animate__animated animate__fadeOutRight'
+})
 </script>
 
 <style lang="scss" scoped>

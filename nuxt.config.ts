@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   modules: [
+    "@hypernym/nuxt-gsap",
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         // @ts-expect-error
@@ -27,4 +28,11 @@ export default defineNuxtConfig({
       title: "Project Startup",
     },
   },
+  gsap:{
+    composables:true,
+    provide:false,
+    extraPlugins:{
+        scrollTrigger: true,
+    }
+  }
 });

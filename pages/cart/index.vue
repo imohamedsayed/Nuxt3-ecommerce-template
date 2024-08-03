@@ -22,7 +22,7 @@
     </v-breadcrumbs>
       <v-row>
         <v-col cols="12" md="8">
-          <div class="cart-item px-2 mb-5" v-for="i in 3" :key="i">
+          <div class="cart-item px-2 mb-5 animate__animated animate__fadeInDown" v-for="i in 3" :key="i">
             <v-row class="align-center">
               <v-col cols="1">
                 <v-btn
@@ -133,6 +133,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInLeft',
+    leaveClass: 'animate__animated animate__fadeOutRight'
+})
 const tab = ref(1);
 const items = [
   {
@@ -159,4 +163,6 @@ const items = [
     background: linear-gradient(to bottom right, #5d88ff4a, #9970da5a);
   }
 }
+
+
 </style>

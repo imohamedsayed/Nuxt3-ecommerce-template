@@ -66,8 +66,8 @@
             ></v-rating>
 
             <p class="mt-4"><span class="text-primary font-weight-bold text-h4"> 120$</span> <del class="text-grey-darken-1 mx-2">200$</del> <v-chip color="success">80$ Discount</v-chip></p>
-        
-        
+
+
             <table class="w-100 w-md-75 w-lg-50 mt-10 font-weight-black">
               <tbody>
                 <tr>
@@ -144,6 +144,11 @@
 
 <script setup>
 import { ref } from "vue";
+
+definePageMeta({
+    enterClass: 'animate__animated animate__fadeInLeft',
+    leaveClass: 'animate__animated animate__fadeOutRight'
+})
 
 const images = [
   "~/assets/images/products/1.jpg",
