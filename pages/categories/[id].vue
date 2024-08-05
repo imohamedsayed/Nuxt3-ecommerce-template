@@ -8,7 +8,7 @@
                     </div>
                 </template>
             </v-img>
-            <div class="overlay rounded-lg">Gaming</div>
+            <div class="overlay rounded-lg"><p class="animate__animated animate__fadeIn">Gaming</p>  </div>
             <div class="custom-shape-divider-bottom-1722211211">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                     preserveAspectRatio="none">
@@ -18,7 +18,7 @@
                 </svg>
             </div>
         </v-sheet>
-        <v-breadcrumbs :items="items">
+        <v-breadcrumbs :items="items" class="animate__animated animate__fadeInLeft">
             <template v-slot:prepend>
                 <v-btn icon elevation="0" class="bg-background" to="/">
                     <v-icon class="mx-1" size="small" icon="mdi-home" color="primary"></v-icon>

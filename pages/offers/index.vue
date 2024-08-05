@@ -1,8 +1,8 @@
 <template>
   <div class="offers">
     <div class="title bg-lightsecondary pa-4 rounded-lg">
-      <v-card-title class="font-weight-bold">Offers</v-card-title>
-      <v-breadcrumbs :items="items">
+      <v-card-title class="font-weight-bold animate__animated animate__backInDown">Offers</v-card-title>
+      <v-breadcrumbs :items="items" class="animate__animated animate__backInLeft">
         <template v-slot:prepend>
           <v-btn icon elevation="0" variant="text" to="/">
             <v-icon
@@ -51,11 +51,11 @@
             >
               <v-chip value="asc"
                 ><IconsAscending />
-                <v-tooltip activator="parent">Ascending</v-tooltip>
+
               </v-chip>
               <v-chip value="desc"
                 ><IconsDescending />
-                <v-tooltip activator="parent">Descending</v-tooltip></v-chip
+                </v-chip
               >
             </v-chip-group>
           </v-col>
@@ -118,7 +118,7 @@
                 :key="product.id"
                 class="product-col"
               >
-                <Product :product="product" />
+              <v-skeleton-loader type="card"></v-skeleton-loader>
               </v-col>
             </v-row>
             <div class="loading text-center" v-else>
@@ -212,15 +212,15 @@ const showFilters = ref(false);
 const props = defineProps({
   products: {
     type: Array,
-    required: true,
+    // required: true,
   },
   category: {
     type: Number,
-    required: true,
+    // required: true,
   },
   pagination: {
     type: Object,
-    required: true,
+    // required: true,
   },
 });
 const rating = ref('')
@@ -231,23 +231,23 @@ const sortOptions = [
 const sort = ref("latcreatedAt");
 const sort2 = ref("asc");
 const page = ref(1);
-const products = ref(props.products);
+const products = ref([]); // props.products
 const loading = ref(true);
 
 const fetchData = async () => {
   loading.value = true;
-  try {
-    const res = await axios.get(
-      `api/products/?${sort.value}=${sort2.value}&page=` + page.value
-    );
-    if (res.status === 200) {
-      products.value = res.data.products;
-    } else {
-      throw new Error(res.response.data.message);
-    }
-  } catch (error) {
-    console.error(error.message);
-  }
+//   try {
+//     const res = await axios.get(
+//       `api/products/?${sort.value}=${sort2.value}&page=` + page.value
+//     );
+//     if (res.status === 200) {
+//       products.value = res.data.products;
+//     } else {
+//       throw new Error(res.response.data.message);
+//     }
+//   } catch (error) {
+//     console.error(error.message);
+//   }
   loading.value = false;
 };
 </script>

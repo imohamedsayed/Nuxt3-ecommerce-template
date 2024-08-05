@@ -54,11 +54,7 @@
                     </template>
                     <template v-slot:item.action="{ item }">
                         <div class="text-end">
-                            <v-tooltip text="Add to cart">
-                                <template v-slot:activator="{ props }">
-                                    <v-btn v-bind="props" icon="mdi-cart-plus" elevation="0"></v-btn>
-                                </template>
-                            </v-tooltip>
+                            <v-btn icon="mdi-cart-plus" elevation="0"></v-btn>
                         </div>
                     </template>
                 </v-data-table>

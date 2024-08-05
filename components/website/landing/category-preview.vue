@@ -12,15 +12,15 @@
       </v-chip-group>
     </div>
     <v-row class="mt-10">
-      <v-col col="12" md="6" lg="3" v-for="i in 8" :key="i">
+      <v-col col="12" md="6" lg="3" v-for="i in 8" :key="i" class="product-column">
         <v-card class="product-card">
-          <v-img src="~/assets/images/products/sports-1.jpg">
-            <template v-slot:placeholder>
+                <img src="~/assets/images/products/sports-2.jpg" class="w-100"  >
+                <!-- <template v-slot:placeholder>
                 <div class="d-flex align-center justify-center fill-height">
                     <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>
                 </div>
             </template>
-          </v-img>
+          </v-img> -->
           <p class="text-primary mx-4 font-weight-bold">Shoes</p>
           <v-card-title class="text-body-2 font-weight-bold">Mens Winter Leathers Jackets</v-card-title>
           <v-card-text>
@@ -50,7 +50,9 @@
 </template>
 
 <script setup>
-const rating = ref(3.5)
+const rating = ref(3.5);
+
+
 </script>
 
 <style lang="scss" scoped>

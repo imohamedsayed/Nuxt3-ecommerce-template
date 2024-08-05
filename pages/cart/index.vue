@@ -21,7 +21,7 @@
       </template>
     </v-breadcrumbs>
       <v-row>
-        <v-col cols="12" md="8">
+        <v-col cols="12" md="8" class="left animate__animated animate__fadeInLeft">
           <div class="cart-item px-2 mb-5 animate__animated animate__fadeInDown" v-for="i in 3" :key="i">
             <v-row class="align-center">
               <v-col cols="1">
@@ -74,7 +74,7 @@
               </v-col>
             </v-row>
           </div>
-          <div class="mt-7">
+          <div class="mt-7 animate__animated animate__fadeInUp">
             <v-row>
               <v-col cols="6" md="4">
                 <div class="cart-info">
@@ -107,7 +107,7 @@
             </v-row>
           </div>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="4" class="right animate__animated animate__fadeInRight">
           <v-card elevation="0" class="checkout pt-4">
             <v-tabs v-model="tab" align-tabs="center" color="primary">
               <v-tab :value="1"
@@ -145,6 +145,32 @@ const items = [
     href: "/cart",
   },
 ];
+
+onMounted(() => {
+    useGsap.from(".left",{
+    x: -200,
+    opacity: 0,
+    duration: 1
+    ,
+    scrollTrigger:{
+        trigger:".left",
+        start: "top 80%",
+        end: "bottom 20%",
+    }
+})
+useGsap.from(".right",{
+    x: 200,
+    opacity: 0,
+    duration: 1
+    ,
+    scrollTrigger:{
+        trigger:".left",
+        start: "top 80%",
+        end: "bottom 20%",
+    }
+})
+})
+
 </script>
 
 <style lang="scss" scoped>

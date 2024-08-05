@@ -119,7 +119,20 @@
 
 <script setup>
 
-
+onMounted(() => {
+    useGsap.utils.toArray('.category-box').forEach((box) => {
+        useGsap.from(box, {
+            x: -200,
+            opacity: 0,
+            duration:1,
+            scrollTrigger: {
+                trigger: box,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        });
+    });
+})
 </script>
 
 <style lang="scss" scoped>

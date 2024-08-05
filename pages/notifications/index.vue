@@ -27,7 +27,8 @@
 
         <v-row>
           <v-col cols="12" md="6" v-for="i in 8" :key="i">
-            <v-list-item title="New update about your order" color="primary" :class="[i % 3 == 0 ? 'bg-primary' : 'bg-lightsecondary', 'pa-4', 'rounded-lg', 'elevation-1']">
+            <v-list-item  title="New update about your order"  color="primary" :class="[i % 3 == 0 ? 'bg-primary' : 'bg-lightsecondary', 'pa-4', 'rounded-lg', 'elevation-1', i%2==0?'left':'right']">
+                
               <v-list-item-subtitle>
                 <span>your order now is being shipped</span><br />
                 <span class="mt-2 d-inline-block">23 minutes ago</span><br />
@@ -49,7 +50,32 @@ definePageMeta({
     enterClass: 'animate__animated animate__fadeInLeft',
     leaveClass: 'animate__animated animate__fadeOutRight'
 })
-
+onMounted(() => {
+    useGsap.utils.toArray('.left').forEach((box) => {
+        useGsap.from(box, {
+            x: -200,
+            opacity: 0,
+            duration:1,
+            scrollTrigger: {
+                trigger: box,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        });
+    });
+    useGsap.utils.toArray('.right').forEach((box) => {
+        useGsap.from(box, {
+            x: 200,
+            opacity: 0,
+            duration:1,
+            scrollTrigger: {
+                trigger: box,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        });
+    });
+})
 
 const items = [
   {

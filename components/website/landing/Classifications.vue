@@ -47,7 +47,7 @@
               </div>
             </v-col>
             <v-col cols="9">
-              
+
               <div class="details">
                 <v-list-item-title class="font-weight-bold ellipse">Relaxed Shirt</v-list-item-title>
                 <span class="d-block text-muted">Clothes</span>
@@ -88,7 +88,20 @@
 </template>
 
 <script setup>
-
+onMounted(() => {
+    useGsap.utils.toArray('.product-box').forEach((box) => {
+        useGsap.from(box, {
+            x: -200,
+            opacity: 0,
+            duration:1,
+            scrollTrigger: {
+                trigger: box,
+                start: 'top 80%',
+                end: 'bottom 20%',
+            }
+        });
+    });
+})
 </script>
 
 <style lang="scss" scoped>
