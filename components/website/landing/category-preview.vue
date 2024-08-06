@@ -14,7 +14,7 @@
     <v-row class="mt-10">
       <v-col col="12" md="6" lg="3" v-for="i in 8" :key="i" class="product-column">
         <v-card class="product-card">
-                <img src="~/assets/images/products/sports-2.jpg" class="w-100"  >
+                <img src="~/assets/images/products/sports-1.jpg" class="w-100"  >
                 <!-- <template v-slot:placeholder>
                 <div class="d-flex align-center justify-center fill-height">
                     <v-progress-circular color="grey-lighten-4" indeterminate></v-progress-circular>

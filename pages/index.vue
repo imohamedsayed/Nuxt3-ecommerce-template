@@ -22,7 +22,7 @@ onMounted(() => {
         useGsap.from(box, {
             x: -200,
             opacity: 0,
-            duration:1,
+            duration:0.5,
             scrollTrigger: {
                 trigger: box,
                 start: 'top 80%',

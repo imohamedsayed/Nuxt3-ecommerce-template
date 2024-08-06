@@ -26,6 +26,12 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Project Startup",
+      link:[
+        {
+            href : "logo.png",
+            rel:"icon"
+        }
+      ]
     },
   },
   gsap:{
