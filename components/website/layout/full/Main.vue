@@ -1,22 +1,28 @@
 <script setup lang="ts">
 import sidebarItems from './vertical-sidebar/sidebarItem';
-import { Menu2Icon } from 'vue-tabler-icons';
+import { Menu2Icon, UserPlusIcon,LoginIcon,LogoutIcon } from 'vue-tabler-icons';
+import { useAuthStore } from '#imports';
 const sidebarMenu = shallowRef(sidebarItems);
 
-const sDrawer = ref(true);
+const sDrawer = ref(false);
+
+const user = computed(()=> useAuthStore().User)
+
+const logout = ()=>{
+    useAuthStore().logout()
+}
 </script>
 
 <template>
     <div >
             <!------Sidebar-------->
-            <client-only>
             <v-navigation-drawer left elevation="0"  app class="leftSidebar"   v-model="sDrawer"
             >
                 <!---Logo part -->
                 <div class="pa-5 text-center">
                     <img src="~/assets/images/logo.png" width="60px" class="mx-4 mx-auto">
                 </div>
-            
+
                 <!-- ---------------------------------------------- -->
                 <!---Navigation -->
                 <!-- ---------------------------------------------- -->
@@ -32,14 +38,34 @@ const sDrawer = ref(true);
                             <WebsiteLayoutFullVerticalSidebarNavItem :item="item" v-else class="leftPadding" />
                             <!---End Single Item-->
                         </template>
+                        <v-list-item to="/login" rounded class="mb-1" active-color="primary" v-if="!user">
+                            <!---If icon-->
+                            <template v-slot:prepend>
+                                <LoginIcon />
+                            </template>
+                            <v-list-item-title>Login</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item to="/register" rounded class="mb-1" active-color="primary" v-if="!user">
+                            <!---If icon-->
+                            <template v-slot:prepend>
+                                <UserPlusIcon />
+                            </template>
+                            <v-list-item-title>Signup</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item rounded class="mb-1" active-color="primary" v-if="user" @click="logout">
+                            <!---If icon-->
+                            <template v-slot:prepend>
+                                <LogoutIcon />
+                            </template>
+                            <v-list-item-title>Logout</v-list-item-title>
+                        </v-list-item>
                     </v-list>
                     <div class="pa-4">
                     </div>
                 </perfect-scrollbar>
             </div>
-
             </v-navigation-drawer>
-            </client-only>
+
             <!------Header-------->
             <v-app-bar elevation="0" height="70">
                 <div class="d-flex align-center justify-space-between w-100">
@@ -50,7 +76,7 @@ const sDrawer = ref(true);
                         </v-btn>
                         <v-text-field width="400px" type="search" clearable class="mt-6 d-none d-md-block mx-2" color="primary" rounded="lg" variant="outlined" prepend-inner-icon="mdi-magnify" label="search"></v-text-field>
                     </div>
-                
+
                     <div>
                         <!--Localization-->
                         <WebsiteLayoutFullVerticalHeaderLanguage/>
@@ -65,16 +91,17 @@ const sDrawer = ref(true);
                                 <IconsHeart />
                             </v-badge>
                         </v-btn> -->
-            
+
                         <!-- Notification -->
-                        <WebsiteLayoutFullVerticalHeaderNotificationDD/>
+                        <WebsiteLayoutFullVerticalHeaderNotificationDD v-if="user"/>
                         <!-- Upgrade button -->
-                        <WebsiteLayoutFullVerticalHeaderProfileDD />
+                        <WebsiteLayoutFullVerticalHeaderProfileDD v-if="user"/>
+                        <v-btn  variant="outlined" to="/"  class="bg-primary me-10 ms-4 ms-lg-0" v-else>Login</v-btn>
                     </div>
                 </div>
             </v-app-bar>
 
-            
+
     </div>
 
 </template>

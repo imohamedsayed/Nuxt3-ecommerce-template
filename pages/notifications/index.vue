@@ -28,7 +28,6 @@
         <v-row>
           <v-col cols="12" md="6" v-for="i in 8" :key="i">
             <v-list-item  title="New update about your order"  color="primary" :class="[i % 3 == 0 ? 'bg-primary' : 'bg-lightsecondary', 'pa-4', 'rounded-lg', 'elevation-1', i%2==0?'left':'right']">
-                
               <v-list-item-subtitle>
                 <span>your order now is being shipped</span><br />
                 <span class="mt-2 d-inline-block">23 minutes ago</span><br />
@@ -50,7 +49,19 @@ definePageMeta({
     enterClass: 'animate__animated animate__fadeInLeft',
     leaveClass: 'animate__animated animate__fadeOutRight'
 })
-onMounted(() => {
+const {$api } = useNuxtApp()
+onMounted(async() => {
+    try{
+        const res = await $api.get("/api/notifications")
+        if(res.status == 200){
+            console.log(res.data)
+        }else{
+            throw new Error(res.response.data.message)
+        }
+    }catch(error){
+        console.log(error.message)
+    }
+
     useGsap.utils.toArray('.left').forEach((box) => {
         useGsap.from(box, {
             x: -200,

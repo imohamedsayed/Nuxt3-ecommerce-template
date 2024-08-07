@@ -180,6 +180,7 @@
 <script setup>
 
 definePageMeta({
+    middleware:["auth"],
     enterClass: 'animate__animated animate__fadeInLeft',
     leaveClass: 'animate__animated animate__fadeOutRight'
 })

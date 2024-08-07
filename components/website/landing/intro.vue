@@ -1,7 +1,5 @@
 <template>
-    <div class="body">
-
-
+    <div class="body rounded-lg">
     <section class="carousel rounded-lg">
         <div class="list">
             <div class="item">

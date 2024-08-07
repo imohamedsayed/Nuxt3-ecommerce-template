@@ -62,6 +62,7 @@ const sidebarItem: menu[] = [
     icon: HeartIcon,
     to: "/wishlist",
   },
+  { header: "Extra" },
 ];
 
 export default sidebarItem;

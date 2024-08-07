@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   modules: [
-    "@hypernym/nuxt-gsap",
+    "@hypernym/nuxt-gsap", '@pinia/nuxt', "@pinia-plugin-persistedstate/nuxt",
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
         // @ts-expect-error
@@ -40,5 +40,6 @@ export default defineNuxtConfig({
     extraPlugins:{
         scrollTrigger: true,
     }
-  }
+  },
+  plugins:["~/plugins/axios.ts"]
 });

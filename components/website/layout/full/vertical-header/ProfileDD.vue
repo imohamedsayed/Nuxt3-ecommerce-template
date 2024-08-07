@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { UserIcon, MailIcon, ListCheckIcon } from 'vue-tabler-icons';
+import {useAuthStore} from "#imports"
+
+const logout = ()=>{
+    useAuthStore().logout()
+}
+
 </script>
 
 <template>
@@ -22,10 +28,10 @@ import { UserIcon, MailIcon, ListCheckIcon } from 'vue-tabler-icons';
                     </template>
                     <v-list-item-title class="pl-4 text-body-1">My Profile</v-list-item-title>
                 </v-list-item>
-               
+
             </v-list>
             <div class="pt-4 pb-4 px-5 text-center">
-                <v-btn to="/auth/login" color="primary" variant="outlined" block>Logout</v-btn>
+                <v-btn color="primary" variant="outlined" block @click="logout">Logout</v-btn>
             </div>
         </v-sheet>
     </v-menu>
