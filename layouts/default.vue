@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
+const { locale } = useI18n()
+console.log(locale.value)
 
 </script>
 
 <template>
     <v-locale-provider >
-        <v-app>
+        <v-app >
             <WebsiteLayoutFullMain/>
-            <v-main>
+            <v-main >
                 <v-container  fluid>
                     <router-view v-slot="{Component,route}">
                         <transition

@@ -9,9 +9,6 @@ const logout = ()=>{
 </script>
 
 <template>
-    <!-- ---------------------------------------------- -->
-    <!-- notifications DD -->
-    <!-- ---------------------------------------------- -->
     <v-menu :close-on-content-click="false">
         <template v-slot:activator="{ props }">
             <v-btn class="profileBtn custom-hover-primary" variant="text" v-bind="props" icon>
@@ -28,7 +25,6 @@ const logout = ()=>{
                     </template>
                     <v-list-item-title class="pl-4 text-body-1">My Profile</v-list-item-title>
                 </v-list-item>
-
             </v-list>
             <div class="pt-4 pb-4 px-5 text-center">
                 <v-btn color="primary" variant="outlined" block @click="logout">Logout</v-btn>

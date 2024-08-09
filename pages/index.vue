@@ -14,12 +14,13 @@
 
 <script setup>
 const { $api } = useNuxtApp();
-
+import {useI18n} from "vue-i18n"
+const {locale} = useI18n()
 onMounted(async ()=>{
     try{
         const res = await $api.get("/api/categories/parents")
         if(res.status == 200){
-            console.log(res)
+            // console.log(res)
         }else{
             throw new Error(res.response.data.message)
         }

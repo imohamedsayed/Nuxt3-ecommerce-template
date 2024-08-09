@@ -96,7 +96,7 @@ const logout = ()=>{
                         <WebsiteLayoutFullVerticalHeaderNotificationDD v-if="user"/>
                         <!-- Upgrade button -->
                         <WebsiteLayoutFullVerticalHeaderProfileDD v-if="user"/>
-                        <v-btn  variant="outlined" to="/"  class="bg-primary me-10 ms-4 ms-lg-0" v-else>Login</v-btn>
+                        <v-btn  variant="outlined" to="/"  class="bg-primary ms-4 me-6 " v-else>Login</v-btn>
                     </div>
                 </div>
             </v-app-bar>

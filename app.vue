@@ -1,12 +1,13 @@
-<template>
-  <div>
+<template >
+  <Html :lang="locale" >
     <NuxtLoadingIndicator/>
     <NuxtLayout>
       <NuxtPage/>
     </NuxtLayout>
-  </div>
+  </Html>
 </template>
 <script setup>
+const { locale } = useI18n()
 
 onErrorCaptured((error) => {
   throw createError({
@@ -18,8 +19,9 @@ onErrorCaptured((error) => {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900;1000&display=swap');
 
-html:lang(AR)* {
+html:lang(ar) *{
   font-family: 'Cairo';
+  direction:rtl;
 }
 
 .text-center {
